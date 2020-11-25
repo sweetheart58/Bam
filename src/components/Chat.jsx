@@ -3,10 +3,15 @@ import AgoraRTC from "agora-rtc-sdk";
 
 import config from "../config.json";
 
+import genToken from "../util";
+
 const Call = (props) => {
   const [client, setClient] = useState(null);
   const [stream, setStream] = useState(null);
-  const [role, setRole] = useState("peer");
+  const [chatState, setChatState] = useState({
+    channelName: null,
+    token: null,
+  });
 
   const addVideoStream = (elementId) => {
     let remoteContainer = document.getElementById("remote-container");
@@ -30,11 +35,11 @@ const Call = (props) => {
   };
 
   useEffect(() => {
-    const query = new URLSearchParams(props.location.search);
-    console.log(query.get("role"));
-    if (query.get("role") === "host") {
-      setRole("host");
-    }
+    const res = genToken();
+    const meetingChannel = res.channelName;
+    const meetingToken = res.token;
+    console.log(meetingChannel);
+    setChatState({ channelName: meetingChannel, token: meetingToken });
     let agoraClient = AgoraRTC.createClient({
       mode: "rtc",
       codec: "vp8",
@@ -42,13 +47,13 @@ const Call = (props) => {
 
     agoraClient.init(config.AGORA_APP_ID);
     setClient(agoraClient);
-  }, [props.location.search, role]);
+  }, []);
 
   const clickHandler = () => {
     // Join a channel
     client.join(
-      config.AGORA_ROOM_TOKEN,
-      "test",
+      chatState.token,
+      chatState.channelName,
       null,
       (uid) => {
         // Create a local stream
