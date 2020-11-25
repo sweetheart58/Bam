@@ -27,7 +27,7 @@ const Reducer = (state, action) => {
                 addressList: payload.address
             }
         default:
-            return {...state };
+            return state
     }
 };
 
