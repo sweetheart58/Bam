@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+h1,
+h4 {
+  text-align: center;
+}
+#me {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+#me video {
+  position: relative !important;
+}
+#remote-container {
+  display: flex;
+  border: 1px solid red;
+}
+#remote-container video {
+  height: auto;
+  position: relative !important;
+}
