@@ -16,6 +16,22 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+.w100 {
+    width: 100%;
+}
+
+.ap-btn {
+    background-color: var(--blue);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.ap-btn:hover {
+    cursor: pointer;
+    background-color: #714ffe;
+}
+
 .dashboard {
     background-color: var(--primary);
     min-height: 100vh;

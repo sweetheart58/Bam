@@ -15,7 +15,7 @@ const UserProfile = ({ data }) => {
             <div className="center">
               <h2>{data.username}</h2>
               <h3>{data.email}</h3>
-              <h3>{data.user[4]}</h3>
+              <h3>{data.user && data.user[4]}</h3>
             </div>
           </div>
         </div>

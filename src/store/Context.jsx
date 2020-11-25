@@ -8,6 +8,8 @@ const initialState = {
   contract: null,
   accounts: null,
   email: null,
+  userList: null,
+  addressList: null,
 };
 
 const Store = (props) => {
