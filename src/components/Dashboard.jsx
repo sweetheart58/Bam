@@ -45,7 +45,7 @@ const Dashboard = () => {
               <div className="v-center h">
                 <div>
                   <div className="center">
-                    <i class="fas fa-file-medical"></i>
+                    <i class="fas fa-file-medical icon"></i>
                   </div>
                   <div>Prescriptions</div>
                 </div>
@@ -66,12 +66,15 @@ const Dashboard = () => {
             <div onClick={() => setView("user")} className="third-3 v-center">
               <div className="white">User Profile</div>
             </div>
-            <div onClick={() => setView("user")} className="third-4 v-center">
+            <div
+              onClick={() => setView("payment")}
+              className="third-4 v-center"
+            >
               <div>
                 <div className="center white icon-b">
                   <i class="fas fa-money-check"></i>
                 </div>
-                <div className="white center">Paymnets</div>
+                <div className="white center">Payments</div>
               </div>
             </div>
           </div>
