@@ -10,7 +10,7 @@ import { Context } from "../store/Context";
 const Dashboard = () => {
   const [view, setView] = useState("appointments");
   const [state, dispatch] = useContext(Context);
-
+  const [search, setSearch] = useState([]);
   const handleView = (view) => {
     switch (view) {
       case "appointments":
@@ -26,9 +26,54 @@ const Dashboard = () => {
     }
   };
 
+  const handleSearch = (e) => {
+    console.log(e.target.value);
+    const newArray = state.userList.filter((m) =>
+      m[5].toLowerCase().includes(e.target.value.toLowerCase())
+    );
+
+    setSearch(newArray);
+  };
+
+  console.log("NEWARRAY", search);
+
   useEffect(() => {
-    const getData = async () => {};
+    const getData = async () => {
+      let address = [];
+      let users = [];
+
+      const userCount = await state.contract.methods.getCountUsers().call();
+
+      console.log("USERS COUNT", userCount);
+
+      for (var i = 0; i < userCount; i++) {
+        const ad = await state.contract.methods.getAddress(i).call();
+
+        address.push(ad);
+      }
+
+      for (var i = 0; i < userCount; i++) {
+        const user = await state.contract.methods.getUserof(address[i]).call();
+        console.log("USER", user);
+        users.push({
+          ...user,
+          6: address[i],
+        });
+      }
+
+      dispatch({
+        type: "USERS",
+        payload: {
+          address,
+          users,
+        },
+      });
+    };
+
+    getData();
   }, []);
+
+  console.log(state);
   return (
     <div className="dashboard">
       <div className="v-center float" onClick={() => setView("diagnostics")}>
@@ -42,7 +87,12 @@ const Dashboard = () => {
         </div>
 
         <div className="searchbar">
-          <input type="text" placeholder="Search" className="search" />
+          <input
+            type="text"
+            placeholder="Search"
+            onChange={handleSearch}
+            className="search"
+          />
         </div>
 
         <div className="container">
@@ -85,6 +135,34 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
+
+        {search.length > 0 ? (
+          <div className="container">
+            <div className="w100">
+              <h2 className="white">Search</h2>
+
+              {search.map((e, i) => (
+                <div className="white flex">
+                  <div>
+                    <p>
+                      {i + 1}. {e[0]}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p>{e[5]}</p>
+                  </div>
+                  <div>
+                    <p>1 eth</p>
+                  </div>
+                  <div>
+                    <p className="ap-btn">Add Appointment</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
 
       <div className="right-overlay">{handleView(view)}</div>

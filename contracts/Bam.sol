@@ -84,6 +84,12 @@ contract Bam{
       
     return userAddress.length;
   }
+
+  function getAddress(uint _index) public view returns(address){
+
+    return userAddress[_index];
+
+  }
   
   function getFilesofUser(uint _index) public view returns(string memory,string memory,uint) {
       
