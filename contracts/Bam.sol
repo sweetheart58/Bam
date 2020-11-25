@@ -21,6 +21,8 @@ contract Bam{
         string specialisation;
     }
 
+    address[] userAddress;
+
     
     mapping(address => Prescription[]) public prescriptions;
     mapping(address => User) public users;
@@ -38,6 +40,8 @@ contract Bam{
     _recipient.transfer(amount);
   }
   function addUser(string memory _name,string memory _email,string memory _type,string memory _licenseCode,uint _age,string memory _specialisation)public{
+
+      userAddress.push(msg.sender);
 
       users[msg.sender] = User(_name,_email,_type,_licenseCode,_age,_specialisation);
       
@@ -75,6 +79,10 @@ contract Bam{
   function getCount() public view returns(uint){
       
     return prescriptions[msg.sender].length;
+  }
+    function getCountUsers() public view returns(uint){
+      
+    return userAddress.length;
   }
   
   function getFilesofUser(uint _index) public view returns(string memory,string memory,uint) {

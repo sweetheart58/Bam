@@ -1,6 +1,6 @@
 import React from "react";
 
-const Topbar = () => {
+const Topbar = (props) => {
   return (
     <div>
       <div className="topbar">
@@ -16,10 +16,20 @@ const Topbar = () => {
           </div>
         </div>
         <div className="flex v-center">
-          <div className="flex">
-            <div>username</div>
-            <div>icon</div>
-          </div>
+          {props.data ? (
+            <div className="flex white">
+              <div className="v-center">
+                <div>{props.data.username}</div>
+              </div>
+              <div>
+                <img
+                  className="imageuser"
+                  src={props.data.imageUrl}
+                  alt={props.data.username}
+                />
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

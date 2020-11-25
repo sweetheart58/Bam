@@ -1,20 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import AppointmentList from "./AppointmentList";
 import Diagnostics from "./Diagnostics";
 import Payments from "./Payments";
 import PrescriptionsList from "./PrescriptionsList";
 import Topbar from "./Topbar";
 import UserProfile from "./UserProfile";
+import { Context } from "../store/Context";
 
 const Dashboard = () => {
   const [view, setView] = useState("appointments");
+  const [state, dispatch] = useContext(Context);
 
   const handleView = (view) => {
     switch (view) {
       case "appointments":
         return <AppointmentList />;
       case "user":
-        return <UserProfile />;
+        return <UserProfile data={state} />;
       case "prescriptions":
         return <PrescriptionsList />;
       case "payment":
@@ -23,6 +25,10 @@ const Dashboard = () => {
         return <Diagnostics />;
     }
   };
+
+  useEffect(() => {
+    const getData = async () => {};
+  }, []);
   return (
     <div className="dashboard">
       <div className="v-center float" onClick={() => setView("diagnostics")}>
@@ -32,7 +38,7 @@ const Dashboard = () => {
       </div>
       <div className="left">
         <div className="main">
-          <Topbar />
+          <Topbar data={state} />
         </div>
 
         <div className="searchbar">

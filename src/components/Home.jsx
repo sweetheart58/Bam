@@ -8,10 +8,11 @@ const Home = () => {
   const [state, dispatch] = useContext(Context);
   const history = useHistory();
   const responseHandler = (response) => {
-    const { givenName, imageUrl } = response.profileObj;
+    const { givenName, imageUrl, email } = response.profileObj;
     const payload = {
       username: givenName,
       imageUrl,
+      email,
     };
     dispatch({ type: "LOGIN", payload });
     history.push("/connect");

@@ -4,6 +4,10 @@ import Reducer from "./Reducer";
 const initialState = {
   username: null,
   imageUrl: null,
+  user: null,
+  contract: null,
+  accounts: null,
+  email: null,
 };
 
 const Store = (props) => {

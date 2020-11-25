@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard";
 import Home from "./components/Home";
 import Chat from "./components/Chat";
 import Store from "./store/Context";
+import Onboard from "./components/Onboard";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route exact path="/connect" component={Connect} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/chat" component={Chat} />
+          <Route exact path="/onboard" component={Onboard} />
         </Switch>
       </BrowserRouter>
     </Store>
