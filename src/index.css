@@ -1,292 +1,309 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --primary: #5840ba;
-    --pink: #f7e5ff;
-    --yellow: #fffdbe;
-    --grey: #f7f7f7;
-    --blue: #714ffe;
+  --primary: #5840ba;
+  --pink: #f7e5ff;
+  --yellow: #fffdbe;
+  --grey: #f7f7f7;
+  --blue: #714ffe;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .dashboard {
-    background-color: var(--primary);
-    min-height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    height: auto;
+  background-color: var(--primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: auto;
 }
 
 .left {
-    width: 60%;
-    padding: 20px;
+  width: 60%;
+  padding: 20px;
 }
 
 .flex {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .v-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .topbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .icon {
-    color: white;
-    font-size: 2em;
+  color: white;
+  font-size: 2em;
 }
 
 .searchbar {
-    width: 80%;
-    margin: auto;
-    margin-top: 70px;
+  width: 80%;
+  margin: auto;
+  margin-top: 70px;
 }
 
 .container {
-    width: 80%;
-    margin: auto;
-    margin-top: 30px;
-    display: flex;
-    height: 300px;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  height: 300px;
 }
 
 .first {
-    width: 20%;
-    display: flex;
-    justify-content: end;
-    flex-direction: column;
+  width: 20%;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
 }
 
 .first-1 {
-    color: white;
-    width: 150px;
-    height: 120px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 8px;
+  color: white;
+  width: 150px;
+  height: 120px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
 }
 
 .first-1:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
+#me {
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+#me video {
+  position: relative !important;
+}
+#remote-container {
+  display: flex;
+  border: 1px solid red;
+}
+#remote-container video {
+  height: auto;
+  position: relative !important;
+}
 .second {
-    width: 50%;
-    background-color: var(--grey);
-    border-radius: 20px;
-    margin-right: 15px;
-    transition: 0.5s;
+  width: 50%;
+  background-color: var(--grey);
+  border-radius: 20px;
+  margin-right: 15px;
+  transition: 0.5s;
 }
 
 #customers {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 #customers td,
 #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
 #customers tr:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #ffffff;
-    color: rgb(32, 29, 29);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ffffff;
+  color: rgb(32, 29, 29);
 }
 
 .third-4 {
-    width: 100%;
-    height: 170px;
-    margin-top: 10px;
-    border-radius: 20px;
-    transition: 0.5s;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+  width: 100%;
+  height: 170px;
+  margin-top: 10px;
+  border-radius: 20px;
+  transition: 0.5s;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
 }
 
 .float:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .cont {
-    display: flex;
-    flex-direction: column;
-    min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
 }
 
 .message {
-    width: 90%;
-    border: none;
-    height: 50px;
-    padding: 10px;
-    font-size: 1.2em;
-    border: 1px solid #ddd;
-    border-radius: 20px;
+  width: 90%;
+  border: none;
+  height: 50px;
+  padding: 10px;
+  font-size: 1.2em;
+  border: 1px solid #ddd;
+  border-radius: 20px;
 }
 
 .send:hover {
-    cursor: pointer;
-    background-color: var(--blue);
+  cursor: pointer;
+  background-color: var(--blue);
 }
 
 .mic {
-    background-color: var(--yellow);
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+  background-color: var(--yellow);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
 }
 
 .mic:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .send {
-    transition: 0.5s;
-    background-color: none;
-    border: none;
-    background-color: var(--primary);
-    width: 50px;
-    height: 50px;
-    color: white;
-    border-radius: 50%;
-    font-weight: 500;
+  transition: 0.5s;
+  background-color: none;
+  border: none;
+  background-color: var(--primary);
+  width: 50px;
+  height: 50px;
+  color: white;
+  border-radius: 50%;
+  font-weight: 500;
 }
 
 .text {
-    width: 90%;
+  width: 90%;
 }
 
 .mic {
-    width: 10%;
+  width: 10%;
 }
 
 .chat {
-    min-height: 80vh;
+  min-height: 80vh;
 }
 
 .input {
-    min-height: 20%;
+  min-height: 20%;
 }
 
 .float {
-    position: fixed;
-    bottom: 50px;
-    right: 40%;
-    background-color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+  position: fixed;
+  bottom: 50px;
+  right: 40%;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .primary {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .third-4:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .h-100 {
-    height: 500px;
+  height: 500px;
 }
 
 .userimage {
-    width: 250px;
-    height: 250px;
-    border-radius: 100%;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
 }
 
 .second:hover {
-    cursor: pointer;
-    opacity: 0.9;
+  cursor: pointer;
+  opacity: 0.9;
 }
 
 .white {
-    color: white;
+  color: white;
 }
 
 .third {
-    width: 30%;
+  width: 30%;
 }
 
 .third-3:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .third-3 {
-    background-color: var(--blue);
-    width: 100%;
-    height: 120px;
-    border-radius: 20px;
-    transition: 0.5s;
+  background-color: var(--blue);
+  width: 100%;
+  height: 120px;
+  border-radius: 20px;
+  transition: 0.5s;
 }
 
 .icon-b {
-    font-size: 5em;
+  font-size: 5em;
 }
 
 .thin {
-    font-weight: 400;
-    font-size: 1.2em;
+  font-weight: 400;
+  font-size: 1.2em;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .h {
-    height: 100%;
+  height: 100%;
 }
 
 .search {
-    width: 100%;
-    height: 50px;
-    background-color: var(--primary);
-    border: none;
-    color: var(--grey) !important;
-    font-size: 2.8em;
-    opacity: 0.8;
+  width: 100%;
+  height: 50px;
+  background-color: var(--primary);
+  border: none;
+  color: var(--grey) !important;
+  font-size: 2.8em;
+  opacity: 0.8;
 }
 
 .search:focus {
-    color: var(--grey) !important;
+  color: var(--grey) !important;
 }
 
 .title {
-    font-size: 3em;
-    color: white;
-    font-weight: 600;
+  font-size: 3em;
+  color: white;
+  font-weight: 600;
 }
 
 .right-overlay {
-    background-color: white;
-    width: 35%;
-    border-radius: 30px;
-    padding: 20px;
-    height: 100vh;
-    position: fixed;
-    right: 10px;
-    height: 98vh;
+  background-color: white;
+  width: 35%;
+  border-radius: 30px;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  right: 10px;
+  height: 98vh;
 }
