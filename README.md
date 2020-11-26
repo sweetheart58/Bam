@@ -18,6 +18,8 @@
     6. Infermedica API for Natural Language Processing
     7. Web Speech API for Speech to Text Parsing
 
+![Untitled Diagram](https://user-images.githubusercontent.com/44068102/100355477-d8866700-3017-11eb-99d2-45db5db675f4.jpg)
+
 ### File Structure
 ```
 .
@@ -33,8 +35,6 @@
 |-- truffle-config.json
 ```
 
-
-![Untitled Diagram](https://user-images.githubusercontent.com/44068102/100355477-d8866700-3017-11eb-99d2-45db5db675f4.jpg)
 
 ### User Appointments Screen
 ![user-appointments](https://user-images.githubusercontent.com/55717315/100318583-487afa00-2fe4-11eb-94a4-563314f3e0d0.jpg)
