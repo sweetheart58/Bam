@@ -16,12 +16,12 @@ const Dashboard = () => {
   const [view, setView] = useState("appointments");
   const [state, dispatch] = useContext(Context);
   const [search, setSearch] = useState([]);
-  const handleView = (view) => {
+  const handleView = (view, s) => {
     switch (view) {
       case "appointments":
-        return <AppointmentList />;
+        return <AppointmentList data={s} />;
       case "user":
-        return <UserProfile data={state} />;
+        return <UserProfile data={s} />;
       case "prescriptions":
         return <PrescriptionsList />;
       case "payment":
@@ -76,7 +76,14 @@ const Dashboard = () => {
       let users = [];
 
       const contract = await setup();
-      console.log(contract);
+
+      const userAddress = window.ethereum.selectedAddress;
+      const user = await contract.methods.getUserof(userAddress).call();
+
+      dispatch({
+        type: "USER",
+        payload: user,
+      });
 
       const userCount = await contract.methods.getCountUsers().call();
 
@@ -122,6 +129,8 @@ const Dashboard = () => {
         fee: 1,
         token: agoraRTC.token,
         channelId: agoraRTC.channelName,
+        name: dData[0],
+        license: dData[3],
       })
       .then((e) => {
         console.log(e);
@@ -226,7 +235,7 @@ const Dashboard = () => {
         ) : null}
       </div>
 
-      <div className="right-overlay">{handleView(view)}</div>
+      <div className="right-overlay">{handleView(view, state)}</div>
     </div>
   );
 };
