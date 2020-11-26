@@ -18,14 +18,23 @@ const Home = () => {
     history.push("/connect");
   };
   return (
-    <GoogleLogin
-      clientId={config.GOOGLE_CLIENT_ID}
-      buttonText="Login"
-      onSuccess={responseHandler}
-      onFailure={responseHandler}
-      cookiePolicy={"single_host_origin"}
-      isSignedIn={true}
-    />
+    <div className="banner v-center">
+      <div>
+        <h1 style={{ fontSize: "10em" }}>Bam</h1>
+        <div className="center">
+          <div>
+            <GoogleLogin
+              clientId={config.GOOGLE_CLIENT_ID}
+              buttonText="Login"
+              onSuccess={responseHandler}
+              onFailure={responseHandler}
+              cookiePolicy={"single_host_origin"}
+              isSignedIn={true}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

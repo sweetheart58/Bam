@@ -25,7 +25,7 @@ const Dashboard = () => {
       case "prescriptions":
         return <PrescriptionsList />;
       case "payment":
-        return <Payments />;
+        return <Payments data={s} />;
       case "diagnostics":
         return <Diagnostics />;
     }
