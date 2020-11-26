@@ -173,6 +173,19 @@ body {
     border-radius: 20px;
 }
 
+.message .user-message,
+.message .bot-message {
+  margin: 3px 0px;
+}
+
+.user-message {
+  text-align: right;
+}
+
+.bot-message {
+  text-align: left;
+}
+
 .send:hover {
     cursor: pointer;
     background-color: var(--blue);

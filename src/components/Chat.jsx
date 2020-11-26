@@ -36,6 +36,7 @@ const Call = (props) => {
 
   useEffect(() => {
     const res = genToken();
+    console.log(res);
     const meetingChannel = res.channelName;
     const meetingToken = res.token;
     console.log(meetingChannel);

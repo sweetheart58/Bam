@@ -6,10 +6,18 @@ import PrescriptionsList from "./PrescriptionsList";
 import Topbar from "./Topbar";
 import UserProfile from "./UserProfile";
 import { Context } from "../store/Context";
+import { useHistory } from "react-router-dom";
 
 const Dashboard = () => {
   const [view, setView] = useState("appointments");
   const [state, dispatch] = useContext(Context);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (state === undefined) {
+      history.push("/");
+    }
+  });
 
   const handleView = (view) => {
     switch (view) {
