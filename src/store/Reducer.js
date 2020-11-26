@@ -19,8 +19,20 @@ const Reducer = (state, action) => {
         contract: payload.instance,
         accounts: payload.accounts,
       };
+
+    case "USERS":
+      return {
+        ...state,
+        userList: payload.users,
+        addressList: payload.address,
+      };
+    case "TYPE":
+      return {
+        ...state,
+        type: payload,
+      };
     default:
-      return { ...state };
+      return state;
   }
 };
 

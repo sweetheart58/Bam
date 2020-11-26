@@ -16,6 +16,22 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+.w100 {
+    width: 100%;
+}
+
+.ap-btn {
+    background-color: var(--blue);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.ap-btn:hover {
+    cursor: pointer;
+    background-color: #714ffe;
+}
+
 .dashboard {
     background-color: var(--primary);
     min-height: 100vh;
@@ -98,7 +114,6 @@ body {
 
 #remote-container {
     display: flex;
-    border: 1px solid red;
 }
 
 #remote-container video {
@@ -135,6 +150,27 @@ body {
     text-align: left;
     background-color: #ffffff;
     color: rgb(32, 29, 29);
+}
+
+.hover:hover {
+    cursor: pointer;
+}
+
+.banner {
+    width: 100%;
+    height: 120vh;
+    background-color: var(--primary);
+    color: white;
+    padding: 20px;
+}
+
+.btn {
+    border: none;
+    background-color: var(--blue);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-right: 10px;
 }
 
 .third-4 {

@@ -63,8 +63,10 @@ const Connect = () => {
       if (lstate.contract) {
         const res = await lstate.contract.methods.name().call();
         console.log("response", res);
-
-        const user = await lstate.contract.methods.getUser().call();
+        const userAddress = window.ethereum.selectedAddress;
+        const user = await lstate.contract.methods
+          .getUserof(userAddress)
+          .call();
 
         console.log(user);
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AgoraRTC from "agora-rtc-sdk";
-
+import { useLocation } from "react-router-dom";
 import config from "../config.json";
 
 import genToken from "../util";
@@ -12,6 +12,13 @@ const Call = (props) => {
     channelName: null,
     token: null,
   });
+
+  const location = useLocation();
+
+  console.log("LOCATION", location);
+
+  const TOKEN = location.state.token;
+  const CHANNEL = location.state.channel;
 
   const addVideoStream = (elementId) => {
     let remoteContainer = document.getElementById("remote-container");
@@ -35,10 +42,11 @@ const Call = (props) => {
   };
 
   useEffect(() => {
-    const res = genToken();
-    console.log(res);
-    const meetingChannel = res.channelName;
-    const meetingToken = res.token;
+    // const res = genToken();
+    const TOKEN = location.state.token;
+    const CHANNEL = location.state.channel;
+    const meetingChannel = CHANNEL;
+    const meetingToken = TOKEN;
     console.log(meetingChannel);
     setChatState({ channelName: meetingChannel, token: meetingToken });
     let agoraClient = AgoraRTC.createClient({
@@ -106,16 +114,36 @@ const Call = (props) => {
   };
   return (
     <React.Fragment>
-      <h1>
-        Video Call
-        <br />
-      </h1>
-      <h4>Local video</h4>
-      <div id="me"></div>
-      <h4>Remote video</h4>
-      <div id="remote-container"></div>
-      <button onClick={clickHandler}>Join Call</button>
-      <button onClick={leaveCall}>Leave Call</button>
+      <div className="banner">
+        <div className="topbar">
+          <div className="flex ">
+            <div className="v-center">
+              <div>
+                <i class="fas fa-th-large icon"></i>
+              </div>{" "}
+              &nbsp; &nbsp;
+            </div>
+            <div>
+              <p className="title">Bam</p>
+            </div>
+          </div>
+          <div className="flex v-center"></div>
+        </div>
+        <h1>
+          Talk to Dr. {location.state.doctor}
+          <h4>Lisence: {location.state.license}</h4>
+          <br />
+        </h1>
+
+        <div id="me"></div>
+        <div id="remote-container"></div>
+        <button className="btn" onClick={clickHandler}>
+          Join Call
+        </button>
+        <button className="btn" onClick={leaveCall}>
+          Leave Call
+        </button>
+      </div>
     </React.Fragment>
   );
 };
