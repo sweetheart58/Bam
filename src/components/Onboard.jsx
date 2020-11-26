@@ -34,6 +34,11 @@ const Onboard = () => {
         lstate.specialisation
       )
       .send({ from: accounts[0] });
+
+    dispatch({
+      type: "TYPE",
+      payload: lstate.type,
+    });
     console.log(res);
 
     history.push("/dashboard");

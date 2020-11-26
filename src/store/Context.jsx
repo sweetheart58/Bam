@@ -10,6 +10,7 @@ const initialState = {
   email: null,
   userList: null,
   addressList: null,
+  type: null,
 };
 
 const Store = (props) => {

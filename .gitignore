@@ -25,3 +25,4 @@ yarn-error.log*
 /src/config.json
 /.evn
 /.env
+/src/firebase.js
